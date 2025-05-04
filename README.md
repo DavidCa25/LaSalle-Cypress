@@ -10,7 +10,7 @@ Este proyecto contiene pruebas automatizadas end-to-end utilizando **Cypress** p
 bash
 git clone https://github.com/tu-usuario/cypress-lasallebajio.git
 
-### 2. Clonar el repositorio
+### 2. Instalar dependencias
 npm install 
 
 ### 3. Ejecutar Cypress 
