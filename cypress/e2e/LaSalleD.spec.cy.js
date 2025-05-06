@@ -7,32 +7,37 @@ describe('Menú Usuario', () => {
   
     it('debería acceder a Calendario', () => {
       cy.get('a[href="calendario.php"]').click({ multiple: true })
-      cy.url().should('include', 'calendario.php') // Validación opcional
+      cy.url().should('include', 'calendario.php')
+      cy.get('div[class="calendar"]').should('exist')
     })
   
     it('debería acceder a Créditos', () => {
       cy.get('a[href="creditos.php"]').click({ multiple: true })
       cy.url().should('include', 'creditos.php')
+      cy.get('img[src="documents/creditos.JPG"]').should('exist')
     })
   
-    it('debería acceder a Agenda', () => {
+    it('debería mostrar los elementos de Agenda', () => {
       cy.get('a[href="agenda.php"]').click({ multiple: true })
       cy.url().should('include', 'agenda.php')
+      cy.get('div[id="com_container"]').should('exist')
     })
   
-    it('debería acceder a Reglamentos', () => {
+    it('debería mostrar los elementos de Reglamentos', () => {
       cy.get('a[href="reglamentos.php"]').click({ multiple: true })
       cy.url().should('include', 'reglamentos.php')
+      cy.get('div[id="inner_wrapper"]').should('exist')
     })
   
-    it('debería acceder a Directorio', () => {
+    it('debería mostrar el formulario de Directorio', () => {
       cy.get('a[href="directorio.php"]').click({ multiple: true })
       cy.url().should('include', 'directorio.php')
+      cy.get('form[name="frmDirectorio"]').should('exist')
     })
   
-    it('debería acceder a Beneficios', () => {
+    it('debería mostrar el texto de beneficios', () => {
       cy.get('a[href="beneficios.php"]').click({ multiple: true })
-      cy.url().should('include', 'beneficios.php')
+      cy.get('div[class="ben_text"]').should('exist')
     })
   
   })
