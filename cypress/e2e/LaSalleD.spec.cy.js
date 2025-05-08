@@ -1,7 +1,27 @@
 describe('Comunidad', () => {
   beforeEach(() => {
     cy.login('00076350', 'Casillas00')
-    cy.get('label[id="btnMenu"]').click({ multiple: true })
+  })
+
+  it('debería poder visualizar su sección de comunidad', () => {
+    cy.get('div[id="container"]').should('exist')
+  })
+
+  it('debería poder visualizar su sección de configuración de cuenta y contraseña', () => {
+    cy.get('div[id="user_link"]').click({ multiple: true })
+    cy.get('a[href="../account.php"]').should('be.visible').then(($link) => {
+    $link[0].click(); 
+    });
+    cy.get('li[aria-controls="panel-2"]').click({ multiple: true })
+    cy.get('div[id="panel-2"]').should('exist')
+
+    cy.get('li[aria-controls="panel-1"]').click({ multiple: true })
+    cy.get('div[id="panel-1"]').should('exist')
+  })
+
+  it('debería poder visualizar su menú de comunidad', () => {
+    cy.get('div[id="user_link"]').click({ multiple: true })
+    cy.get('a[href="../logout.php"]').should('exist')
   })
 
   it('debería mostrar la sección de creditos culturales', () =>{
@@ -28,14 +48,28 @@ describe('Comunidad', () => {
     cy.get('a[href="comu_segura.php"]').click({multiple:true})
     cy.get('div[id="com_container"]').should('exist')
   })
-  it('debería mostrar la sección de comunidad segura', () =>{
+  it('debería mostrar la sección de mesa de ayuda', () =>{
     cy.get('a[href="../dtia/mesadeayuda.php"]').click({multiple:true})
     cy.get('a[href="https://mesadeayuda.lasallebajio.edu.mx/"]').should('exist')
+  })
+  it('debería mostrar el panel de universidad', () => {
+    cy.get('a[href="../vida/udiversidad.php"]').click({ multiple: true })
+    cy.get('div[id="interior_wrapper"]').should('exist')
+  })
+  it('debería mostrar el panel de imagen institucional', () => {
+    cy.get('a[href="imagotipo.php"]').click({ multiple: true })
+    cy.get('section[class="wrapper"]').should('exist')
+  })
+  it('debería poder cerrar sesión', () => {
+    cy.get('div[id="user_link"]').click({ multiple: true })
+    cy.get('a[href="../logout.php"]').should('be.visible').then(($link) => {
+    $link[0].click(); 
+  });
+    cy.get('div[id="banner"]').should('exist')
   })
 })
 
 describe('Menú Usuario', () => {
-
     beforeEach(() => {
       cy.login('00076350', 'Casillas00')
       cy.get('label[id="btnMenu"]').click({ multiple: true })
@@ -72,10 +106,17 @@ describe('Menú Usuario', () => {
     })
   
     it('debería mostrar el texto de beneficios', () => {
-      cy.get('a[href="beneficios.php"]').click({ multiple: true })
-      cy.get('div[class="ben_text"]').should('exist')
-    })
-  })
+      cy.get('label[id="btnMenu"]').click({ force: true });
+    
+      cy.get('a[href="beneficios.php"]').should('be.visible').then(($link) => {
+        $link[0].click();
+      });
+    
+      cy.url().should('include', 'beneficios.php');
+      cy.get('div[id="ben_text"]').should('exist');
+    });
+    
+})
 
 
   
