@@ -5,43 +5,43 @@ describe('Pruebas de enlaces en la sección Servicios a la Comunidad', () => {
       cy.contains('a', 'SERVICIOS').click();
     });
   
-    it('Visita Centros Comunitarios De La Salle', () => {
+    it('TC_SERVICIOS_COMINIDAD_CENTROS_COMU_31 ', () => {
       cy.contains('#int_section_links a', 'Centros Comunitarios De La Salle').click();
     });
   
-    it('Visita Centro de Desarrollo Humano', () => {
+    it('TC_SERVICIOS_COMINIDAD_CENTRO_DH_35', () => {
       cy.contains('#int_section_links a', 'Centro de Desarrollo Humano').click();
     });
   
-    it('Visita Clínicas Odontológicas', () => {
+    it('TC_SERVICIOS_COMINIDAD_CLINICAS_32', () => {
       cy.contains('#int_section_links a', 'Clínicas Odontológicas').click();
     });
   
-    it('Visita Hospital Veterinario para Pequeñas Especies', () => {
+    it('TC_SERVICIOS_COMINIDAD_HOSPITAL_VETERINARIO_36 ', () => {
       cy.contains('#int_section_links a', 'Hospital Veterinario para Pequeñas Especies').click();
     });
   
-    it('Visita MiM, Mi Museo Universitario De La Salle', () => {
+    it('TC_SERVICIOS_COMINIDAD_MIM_39 ', () => {
       cy.contains('#int_section_links a', 'MiM, Mi Museo Universitario De La Salle').invoke('removeAttr', 'target').click();
     });
   
-    it('Visita Vinculación Institucional', () => {
+    it('TC_SERVICIOS_COMINIDAD_VINCULACION_INSTITUCIONAL_37 ', () => {
       cy.contains('#int_section_links a', 'Vinculación Institucional').click();
     });
   
-    it('Visita Despachos de Asesoría Jurídica', () => {
+    it('TC_SERVICIOS_COMINIDAD_ASESORIA_JURIDICA_33', () => {
       cy.contains('#int_section_links a', 'Despachos de Asesoría Jurídica').click();
     });
   
-    it('Visita Espacios a tu servicio', () => {
+    it('TC_SERVICIOS_COMINIDAD_ESPACIOS_SERVICIO_38', () => {
       cy.contains('#int_section_links a', 'Espacios a tu servicio').click();
     });
   
-    it('Visita Centro de Certificación Laboral y Educación Continua', () => {
+    it('TC_SERVICIOS_COMINIDAD_CENTRO_CERTIFICACION_LABORAL_34 ', () => {
       cy.contains('#int_section_links a', 'Centro de Certificación Laboral y Educación Continua').click();
     });
   
-    it('Visita Parque de Innovación De La Salle', () => {
+    it('TC_SERVICIOS_COMINIDAD_PARQUE_INOVACION_40', () => {
       cy.contains('#int_section_links a', 'Parque de Innovación De La Salle').invoke('removeAttr', 'target').click();
     });
   
