@@ -9,7 +9,7 @@ cy.url().should('include', '/oferta/')
 
     });
   
-    it('Debe visitar enlace de Maestrías', () => {
+    it('TC_Oferta_Academica41', () => {
         
       
         cy.get('a[href="doctorados.php"]').click()
@@ -25,7 +25,7 @@ cy.url().should('include', '/oferta/')
       }) 
 
 
-      it('Debe visitar adminstracion de servicios de salud', () => {
+      it('C_Oferta_Académica42 ', () => {
         cy.contains('a', 'maestrÍas').click()
 
         cy.url().should('include', 'maestrias.php')
@@ -38,7 +38,7 @@ cy.url().should('include', '/oferta/')
       } )
 
 
-      it('Debe visitar especialidades', () => {
+      it('TC_Oferta_Académica43 ', () => {
         cy.contains('a', 'especialidades').click()
 
         cy.url().should('include', 'especialidades.php')
@@ -50,7 +50,7 @@ cy.url().should('include', '/oferta/')
 
       } )
 
-      it('Debe dar clic', ()=> {
+      it('TC_Oferta_Academica44 ', ()=> {
         cy.contains('a', 'licenciaturas').click()
         cy.url().should('include', 'licenciaturas.php')
 
