@@ -1,5 +1,11 @@
 describe('Test Cases del 001 al 010', () => {
-    it('Visitar pagina de la Salle Bajio', () => {
+    it('TC_AcccerderAlSitio_001 - Visitar pagina de la Salle Bajio', () => {
+
+        //Visita la página de la Salle Bajío
+        cy.visit('https://www.lasallebajio.edu.mx/')
+
+    })
+    it('TC_OfertaAcademica_002  - Visitar pagina de la Salle Bajio', () => {
 
         //Visita la página de la Salle Bajío
         cy.visit('https://www.lasallebajio.edu.mx/')
@@ -7,19 +13,7 @@ describe('Test Cases del 001 al 010', () => {
         ofertaAcademica.click({ multiple: true })
 
     })
-    it('Mostrar lista de maestrias', () => {
-
-        //Visita la página de la Salle Bajío
-        cy.visit('https://www.lasallebajio.edu.mx/')
-        var ofertaAcademica = cy.get('div[id="link3"]')
-        ofertaAcademica.click({ multiple: true })
-
-        //Click en maestrías
-        var div_maestrias = cy.get('a[href="maestrias.php"]')
-        div_maestrias.click({ multiple: true })
-
-    })
-    it('Mostrar informacion de una maestria', () => {
+    it(' TC_Maestrias_003 - Mostrar lista de maestrias', () => {
 
         //Visita la página de la Salle Bajío
         cy.visit('https://www.lasallebajio.edu.mx/')
@@ -39,7 +33,7 @@ describe('Test Cases del 001 al 010', () => {
         cy.get('#program_info').should('contain.text', 'Facultad de Ingenierías y Tecnologías');
 
     })
-    it('Mostrar objetivo de la maestria', () => {
+    it('TC_Maestria_Objetivo_004 - Mostrar objetivo de la maestria', () => {
 
         //Comando para ir a la maestria Redes y Seguridad de la Información
         cy.irAMaestriaRedes();
@@ -53,7 +47,7 @@ describe('Test Cases del 001 al 010', () => {
         .should('contain.text', 'objetivo');
 
     });
-    it('Mostrar Plan de estudios de la maestria', () => {
+    it('TC_Maestria_Plan_005 - Mostrar Plan de estudios de la maestria', () => {
 
         //Comando para ir a la maestria Redes y Seguridad de la Información
         cy.irAMaestriaRedes();
@@ -66,7 +60,7 @@ describe('Test Cases del 001 al 010', () => {
         .find('span.panel_title')
         .should('contain.text', 'plan de estudios');
     })
-    it('Mostrar Fortalezas institucionales de la maestria', () => {
+    it('TC_Maestria_Fortalezas_006 - Mostrar Fortalezas institucionales de la maestria', () => {
 
         //Comando para ir a la maestria Redes y Seguridad de la Información
         cy.irAMaestriaRedes();
@@ -79,7 +73,7 @@ describe('Test Cases del 001 al 010', () => {
         .find('span.panel_title')
         .should('contain.text', 'fortalezas institucionales');
     })
-    it('Mostrar Costos de la maestria', () => {
+    it('TC_Maestria_Costos_007 - Mostrar Costos de la maestria', () => {
 
         //Comando para ir a la maestria Redes y Seguridad de la Información
         cy.irAMaestriaRedes();
@@ -92,7 +86,7 @@ describe('Test Cases del 001 al 010', () => {
         .find('span.panel_title')
         .should('contain.text', 'costos');
     })
-    it('Mostrar Perfil de ingreso y egreso de la maestria', () => {
+    it('TC_Maestria_Perfil_008 - Mostrar Perfil de ingreso y egreso de la maestria', () => {
 
         //Comando para ir a la maestria Redes y Seguridad de la Información
         cy.irAMaestriaRedes();
@@ -105,7 +99,7 @@ describe('Test Cases del 001 al 010', () => {
         .find('span.panel_title')
         .should('contain.text', 'perfil de ingreso');
     })
-    it('Mostrar Fortalecimiento del aprendizaje de la maestria', () => {
+    it('TC_Maestria_Fortalecimiento_009 - Mostrar Fortalecimiento del aprendizaje de la maestria', () => {
 
         //Comando para ir a la maestria Redes y Seguridad de la Información
         cy.irAMaestriaRedes();
@@ -118,7 +112,7 @@ describe('Test Cases del 001 al 010', () => {
         .find('span.panel_title')
         .should('contain.text', 'fortalecimiento del aprendizaje');
     })
-    it('Mostrar Informes de la maestria', () => {
+    it('TC_Maestria_Informes_010 - Mostrar Informes de la maestria', () => {
 
         //Comando para ir a la maestria Redes y Seguridad de la Información
         cy.irAMaestriaRedes();
